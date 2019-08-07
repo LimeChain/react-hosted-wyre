@@ -44,8 +44,9 @@ class WyreWidget extends React.Component {
 
     var uuid = du.hashMD5(dua.join(':'));
 
-    const env = `test`; // Should be production for prod
-    const accountId = `AC_DZ6RMH89QRG` // TODO move these to constants
+    console.log(process.env.REACT_APP_WYRE_ENV)
+    const env = process.env.REACT_APP_WYRE_ENV;
+    const accountId = process.env.REACT_APP_WYRE_ACCOUNT_ID;
 
     this.state = {
       open: false,

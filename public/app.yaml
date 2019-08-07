@@ -1,0 +1,47 @@
+service: frontend
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+  - url: /(.+\.js)
+    static_files: build/\1
+    upload: build/(.+\.js)
+
+  - url: /(.+\.css)
+    static_files: build/\1
+    upload: build/(.+\.css)
+
+  - url: /(.+\.png)
+    static_files: build/\1
+    upload: build/(.+\.png)
+
+  - url: /(.+\.jpg)
+    static_files: build/\1
+    upload: build/(.+\.jpg)
+
+  - url: /(.+\.svg)
+    static_files: build/\1
+    upload: build/(.+\.svg)
+
+  - url: /(.+\.m4v)
+    static_files: build/\1
+    upload: build/(.+\.m4v)
+
+  - url: /favicon.ico
+    static_files: build/favicon.ico
+    upload: build/favicon.ico
+
+  - url: /(.+\.json)
+    static_files: build/\1
+    upload: build/(.+\.json)
+
+  - url: /(.+)
+    secure: always
+    static_files: build/index.html
+    upload: build/index.html
+
+  - url: /
+    secure: always
+    static_files: build/index.html
+    upload: build/index.html
